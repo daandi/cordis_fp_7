@@ -1,7 +1,7 @@
 class CreateFp7Contractors < ActiveRecord::Migration
   def change
     create_table :fp7_contractors do |t|
-      t.string :rcn
+      t.integer :rcn
       t.string :project_title
       t.string :contract_number
       t.string :role
@@ -27,5 +27,6 @@ class CreateFp7Contractors < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :fp7_contractors, :rcn
   end
 end

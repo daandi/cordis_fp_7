@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140331081137) do
 
   create_table "fp7_contractors", force: true do |t|
-    t.string   "rcn"
+    t.integer  "rcn"
     t.string   "project_title"
     t.string   "contract_number"
     t.string   "role"
@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 20140331081137) do
     t.datetime "updated_at"
   end
 
+  add_index "fp7_contractors", ["rcn"], name: "index_fp7_contractors_on_rcn"
+
   create_table "fp7_projects", force: true do |t|
-    t.string   "rcn"
+    t.integer  "rcn"
     t.string   "project_title"
     t.date     "start_date"
     t.date     "end_date"
@@ -69,5 +71,7 @@ ActiveRecord::Schema.define(version: 20140331081137) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "fp7_projects", ["rcn"], name: "index_fp7_projects_on_rcn"
 
 end

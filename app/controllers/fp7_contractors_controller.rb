@@ -4,7 +4,7 @@ class Fp7ContractorsController < ApplicationController
   # GET /fp7_contractors
   # GET /fp7_contractors.json
   def index
-    @fp7_contractors = Fp7Contractor.all
+    @fp7_contractors = Fp7Contractor.paginate(:page => params[:page], :per_page => 25)
   end
 
   # GET /fp7_contractors/1

@@ -38,6 +38,9 @@ gem 'haml-rails'
 # Pagination
 gem 'will_paginate', '~> 3.0.5'
 
+#faster import
+gem 'activerecord-import'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

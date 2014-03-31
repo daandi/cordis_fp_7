@@ -1,7 +1,7 @@
 class CreateFp7Projects < ActiveRecord::Migration
   def change
     create_table :fp7_projects do |t|
-      t.string :rcn
+      t.integer :rcn
       t.string :project_title
       t.date :start_date
       t.date :end_date
@@ -28,5 +28,6 @@ class CreateFp7Projects < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :fp7_projects, :rcn
   end
 end
