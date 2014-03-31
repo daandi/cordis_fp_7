@@ -1,0 +1,105 @@
+- model_class = Fp7Project
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:rcn) + ':'
+  %br
+  = @fp7_project.rcn
+%p
+  %strong= model_class.human_attribute_name(:project_title) + ':'
+  %br
+  = @fp7_project.project_title
+%p
+  %strong= model_class.human_attribute_name(:start_date) + ':'
+  %br
+  = @fp7_project.start_date
+%p
+  %strong= model_class.human_attribute_name(:end_date) + ':'
+  %br
+  = @fp7_project.end_date
+%p
+  %strong= model_class.human_attribute_name(:duration) + ':'
+  %br
+  = @fp7_project.duration
+%p
+  %strong= model_class.human_attribute_name(:status) + ':'
+  %br
+  = @fp7_project.status
+%p
+  %strong= model_class.human_attribute_name(:contract_number) + ':'
+  %br
+  = @fp7_project.contract_number
+%p
+  %strong= model_class.human_attribute_name(:keywords) + ':'
+  %br
+  = @fp7_project.keywords
+%p
+  %strong= model_class.human_attribute_name(:date_of_signature) + ':'
+  %br
+  = @fp7_project.date_of_signature
+%p
+  %strong= model_class.human_attribute_name(:total_cost) + ':'
+  %br
+  = @fp7_project.total_cost
+%p
+  %strong= model_class.human_attribute_name(:total_funding) + ':'
+  %br
+  = @fp7_project.total_funding
+%p
+  %strong= model_class.human_attribute_name(:entry_date) + ':'
+  %br
+  = @fp7_project.entry_date
+%p
+  %strong= model_class.human_attribute_name(:project_website) + ':'
+  %br
+  = @fp7_project.project_website
+%p
+  %strong= model_class.human_attribute_name(:other_information) + ':'
+  %br
+  = @fp7_project.other_information
+%p
+  %strong= model_class.human_attribute_name(:call) + ':'
+  %br
+  = @fp7_project.call
+%p
+  %strong= model_class.human_attribute_name(:framework_programme) + ':'
+  %br
+  = @fp7_project.framework_programme
+%p
+  %strong= model_class.human_attribute_name(:programme) + ':'
+  %br
+  = @fp7_project.programme
+%p
+  %strong= model_class.human_attribute_name(:project_acronym) + ':'
+  %br
+  = @fp7_project.project_acronym
+%p
+  %strong= model_class.human_attribute_name(:achievements) + ':'
+  %br
+  = @fp7_project.achievements
+%p
+  %strong= model_class.human_attribute_name(:activity_area) + ':'
+  %br
+  = @fp7_project.activity_area
+%p
+  %strong= model_class.human_attribute_name(:subjects) + ':'
+  %br
+  = @fp7_project.subjects
+%p
+  %strong= model_class.human_attribute_name(:contract_type) + ':'
+  %br
+  = @fp7_project.contract_type
+%p
+  %strong= model_class.human_attribute_name(:general_information) + ':'
+  %br
+  = @fp7_project.general_information
+%p
+  %strong= model_class.human_attribute_name(:objectives) + ':'
+  %br
+  = @fp7_project.objectives
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), fp7_project_path, :class => 'btn'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_fp7_project_path(@fp7_project), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), fp7_project_path(@fp7_project), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

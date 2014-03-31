@@ -1,0 +1,96 @@
+= form_for @fp7_contractor, :html => { :class => 'form-horizontal' } do |f|
+  .control-group
+    = f.label :rcn, :class => 'control-label'
+    .controls
+      = f.text_field :rcn, :class => 'text_field'
+  .control-group
+    = f.label :project_title, :class => 'control-label'
+    .controls
+      = f.text_field :project_title, :class => 'text_field'
+  .control-group
+    = f.label :contract_number, :class => 'control-label'
+    .controls
+      = f.text_field :contract_number, :class => 'text_field'
+  .control-group
+    = f.label :role, :class => 'control-label'
+    .controls
+      = f.text_field :role, :class => 'text_field'
+  .control-group
+    = f.label :pj_uid, :class => 'control-label'
+    .controls
+      = f.text_field :pj_uid, :class => 'text_field'
+  .control-group
+    = f.label :organization_name, :class => 'control-label'
+    .controls
+      = f.text_field :organization_name, :class => 'text_field'
+  .control-group
+    = f.label :organization_department, :class => 'control-label'
+    .controls
+      = f.text_field :organization_department, :class => 'text_field'
+  .control-group
+    = f.label :organization_subdepartment, :class => 'control-label'
+    .controls
+      = f.text_field :organization_subdepartment, :class => 'text_field'
+  .control-group
+    = f.label :organization_acronym, :class => 'control-label'
+    .controls
+      = f.text_field :organization_acronym, :class => 'text_field'
+  .control-group
+    = f.label :organization_size, :class => 'control-label'
+    .controls
+      = f.text_field :organization_size, :class => 'text_field'
+  .control-group
+    = f.label :organization_type, :class => 'control-label'
+    .controls
+      = f.text_field :organization_type, :class => 'text_field'
+  .control-group
+    = f.label :address, :class => 'control-label'
+    .controls
+      = f.text_field :address, :class => 'text_field'
+  .control-group
+    = f.label :po_box, :class => 'control-label'
+    .controls
+      = f.text_field :po_box, :class => 'text_field'
+  .control-group
+    = f.label :post_code, :class => 'control-label'
+    .controls
+      = f.text_field :post_code, :class => 'text_field'
+  .control-group
+    = f.label :city, :class => 'control-label'
+    .controls
+      = f.text_field :city, :class => 'text_field'
+  .control-group
+    = f.label :country, :class => 'control-label'
+    .controls
+      = f.text_field :country, :class => 'text_field'
+  .control-group
+    = f.label :organization_website, :class => 'control-label'
+    .controls
+      = f.text_field :organization_website, :class => 'text_field'
+  .control-group
+    = f.label :pe_uid, :class => 'control-label'
+    .controls
+      = f.text_field :pe_uid, :class => 'text_field'
+  .control-group
+    = f.label :contact_surname, :class => 'control-label'
+    .controls
+      = f.text_field :contact_surname, :class => 'text_field'
+  .control-group
+    = f.label :contact_name, :class => 'control-label'
+    .controls
+      = f.text_field :contact_name, :class => 'text_field'
+  .control-group
+    = f.label :contact_position, :class => 'control-label'
+    .controls
+      = f.text_field :contact_position, :class => 'text_field'
+  .control-group
+    = f.label :contact_initials, :class => 'control-label'
+    .controls
+      = f.text_field :contact_initials, :class => 'text_field'
+  .control-group
+    = f.label :contact_title, :class => 'control-label'
+    .controls
+      = f.text_field :contact_title, :class => 'text_field'
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), fp7_contractors_path, :class => 'btn'

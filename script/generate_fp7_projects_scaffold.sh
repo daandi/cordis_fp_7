@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+rails generate scaffold fp7_project rcn:string project_title:string start_date:date end_date:date duration:date status:string contract_number:string keywords:string date_of_signature:date total_cost:decimal total_funding:decimal entry_date:date project_website:string other_information:text call:string framework_programme:string programme:string project_acronym:string achievements:string activity_area:string subjects:string contract_type:string general_information:text objectives:text 
+
+rake db:migrate
+
+rails generate scaffold fp7_contractor rcn:string project_title:string contract_number:string role:string pj_uid:string organization_name:string organization_department:string organization_subdepartment:string organization_acronym:string organization_size:string organization_type:string address:string po_box:string post_code:string city:string country:string organization_website:string pe_uid:string contact_surname:string contact_name:string contact_position:string contact_initials:string contact_title:string

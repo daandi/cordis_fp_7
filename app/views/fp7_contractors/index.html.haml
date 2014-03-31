@@ -1,0 +1,65 @@
+- model_class = Fp7Contractor
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:rcn)
+      %th= model_class.human_attribute_name(:project_title)
+      %th= model_class.human_attribute_name(:contract_number)
+      %th= model_class.human_attribute_name(:role)
+      %th= model_class.human_attribute_name(:pj_uid)
+      %th= model_class.human_attribute_name(:organization_name)
+      %th= model_class.human_attribute_name(:organization_department)
+      %th= model_class.human_attribute_name(:organization_subdepartment)
+      %th= model_class.human_attribute_name(:organization_acronym)
+      %th= model_class.human_attribute_name(:organization_size)
+      %th= model_class.human_attribute_name(:organization_type)
+      %th= model_class.human_attribute_name(:address)
+      %th= model_class.human_attribute_name(:po_box)
+      %th= model_class.human_attribute_name(:post_code)
+      %th= model_class.human_attribute_name(:city)
+      %th= model_class.human_attribute_name(:country)
+      %th= model_class.human_attribute_name(:organization_website)
+      %th= model_class.human_attribute_name(:pe_uid)
+      %th= model_class.human_attribute_name(:contact_surname)
+      %th= model_class.human_attribute_name(:contact_name)
+      %th= model_class.human_attribute_name(:contact_position)
+      %th= model_class.human_attribute_name(:contact_initials)
+      %th= model_class.human_attribute_name(:contact_title)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @fp7_contractors.each do |fp7_contractor|
+      %tr
+        %td= link_to fp7_contractor.id, fp7_contractor_path(fp7_contractor)
+        %td= fp7_contractor.rcn
+        %td= fp7_contractor.project_title
+        %td= fp7_contractor.contract_number
+        %td= fp7_contractor.role
+        %td= fp7_contractor.pj_uid
+        %td= fp7_contractor.organization_name
+        %td= fp7_contractor.organization_department
+        %td= fp7_contractor.organization_subdepartment
+        %td= fp7_contractor.organization_acronym
+        %td= fp7_contractor.organization_size
+        %td= fp7_contractor.organization_type
+        %td= fp7_contractor.address
+        %td= fp7_contractor.po_box
+        %td= fp7_contractor.post_code
+        %td= fp7_contractor.city
+        %td= fp7_contractor.country
+        %td= fp7_contractor.organization_website
+        %td= fp7_contractor.pe_uid
+        %td= fp7_contractor.contact_surname
+        %td= fp7_contractor.contact_name
+        %td= fp7_contractor.contact_position
+        %td= fp7_contractor.contact_initials
+        %td= fp7_contractor.contact_title
+        %td=l fp7_contractor.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_fp7_contractor_path(fp7_contractor), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), fp7_contractor_path(fp7_contractor), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_fp7_contractor_path, :class => 'btn btn-primary'
