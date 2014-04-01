@@ -1,0 +1,29 @@
+- model_class = Fp7Contractor
+.page-header
+	%h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+	%h2=@project_name
+	-@fp7_contractors.each do |c|
+		%ul
+			%li
+				=c.project_name
+			%li
+				.vcard
+					%p.fn
+						%a.url{href: "#"}
+						=c.contact_title
+						=c.contact_surname
+						=c.contact_name
+					%p.org
+						=c.organization_name
+					%p.adr
+						%span.street-address
+						=c.address
+						=c.city
+						=c.country
+						%br/
+						%span.postal-code
+						=c.post_code || c.po_box
+						%br/
+						%span.country-name
+							= c.country
+

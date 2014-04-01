@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331081137) do
+ActiveRecord::Schema.define(version: 20140401142147) do
 
   create_table "fp7_contractors", force: true do |t|
     t.integer  "rcn"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140331081137) do
     t.datetime "updated_at"
   end
 
+  add_index "fp7_contractors", ["project_title"], name: "index_fp7_contractors_on_project_title"
   add_index "fp7_contractors", ["rcn"], name: "index_fp7_contractors_on_rcn"
 
   create_table "fp7_projects", force: true do |t|
@@ -72,6 +73,8 @@ ActiveRecord::Schema.define(version: 20140331081137) do
     t.datetime "updated_at"
   end
 
+  add_index "fp7_projects", ["project_acronym"], name: "index_fp7_projects_on_project_acronym"
+  add_index "fp7_projects", ["project_title"], name: "index_fp7_projects_on_project_title"
   add_index "fp7_projects", ["rcn"], name: "index_fp7_projects_on_rcn"
 
 end

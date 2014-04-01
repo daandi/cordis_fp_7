@@ -60,6 +60,11 @@ class Fp7ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def project_acronym
+    @project_acronym = params[:project_acronym]
+    @fp7_contractors = (Fp7Project.find_by :project_acronym =>  @project_acronym).fp7_contractors 
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

@@ -1,6 +1,6 @@
 class Fp7ContractorsController < ApplicationController
   before_action :set_fp7_contractor, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /fp7_contractors
   # GET /fp7_contractors.json
   def index
