@@ -64,6 +64,7 @@ class Fp7ProjectsController < ApplicationController
   def project_acronym
     @project_acronym = params[:project_acronym]
     @fp7_project = (Fp7Project.find_by :project_acronym =>  @project_acronym)
+    @fp7_contractors = Fp7Contractor.where(  rcn: @fp7_project.rcn ).order(:organization_name)
   end
 
   private
