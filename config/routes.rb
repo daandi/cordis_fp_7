@@ -3,6 +3,7 @@ CordisFp7::Application.routes.draw do
   resources :fp7_projects
   
   get 'project_acronym/:project_acronym' => 'fp7_projects#project_acronym'
+  get 'project_acronym' => 'fp7_projects#project_acronym'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
