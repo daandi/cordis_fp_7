@@ -17,22 +17,26 @@ namespace :fp7_data do
     end
     puts "begin to import projets in db, this may take some time..."
     Fp7Project.import projects
-    puts "Projects imoported took #{Time.now - start_time} seconds"
+    puts "#{Fp7Project.count} Projects imoported took #{Time.now - start_time} seconds"
     
     #Add Project Contractors
     start_time = Time.now
     counter = 0
+    rcn_file = File.open('rcn.txt','w+')
     contractors = []
-    ["vendor/data/fp7_contractors_2.csv","vendor/data/fp7_contractors_1_utf_fixed.csv"].each do |f|
-      CSV.foreach("vendor/data/fp7_contractors_2.csv", headers: true, col_sep: ';') do |row| 
-        contractors << Fp7Contractor.new( row.to_hash ) 
+    ["vendor/data/fp7_contractors_1.csv","vendor/data/fp7_contractors_2.csv",].each do |f|
+      CSV.foreach(f, headers: true, col_sep: ';', encoding: "UTF-8") do |row|
+        contractor = Fp7Contractor.new( row.to_hash )
+        contractors << contractor
         counter += 1
+        rcn_file.write("#{contractor.rcn}\n")
         if counter % 1000 == 0 then puts "READ #{counter} Fp7-Project-Contractors" end
       end
     end
+    rcn_file.close
     puts "begin to import Contractors in db, this may take some time..."
     Fp7Contractor.import contractors
-    puts "Contractors imoported took #{Time.now - start_time} seconds"
+    puts "#{Fp7Contractor.count} contractors imported , took #{Time.now - start_time} seconds"
 
   end
 end

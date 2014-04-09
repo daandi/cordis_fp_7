@@ -63,7 +63,7 @@ class Fp7ProjectsController < ApplicationController
   
   def project_acronym
     @project_acronym = params[:project_acronym]
-    @fp7_contractors = (Fp7Project.find_by :project_acronym =>  @project_acronym).fp7_contractors 
+    @fp7_project = (Fp7Project.find_by :project_acronym =>  @project_acronym)
   end
 
   private
